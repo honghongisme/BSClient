@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".module.social.commit.CommitActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_back"
+                android:id="@+id/back_iv"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_not_colloct"
+                android:layout_alignParentRight="true"
+                android:id="@+id/collect_iv"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/grey1"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/refreshLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include layout="@layout/item_post_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/divider"
+                    android:id="@+id/divider1"
+                    app:layout_constraintTop_toBottomOf="@id/text_tv"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/describe_total_commit"
+                    android:text="@string/total_commit"
+                    app:layout_constraintTop_toBottomOf="@id/divider1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black1"
+                    android:textSize="13sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:id="@+id/divider2"
+                    android:background="@color/divider"
+                    app:layout_constraintTop_toBottomOf="@id/describe_total_commit"
+                    android:layout_marginTop="10dp"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/list"
+                        android:overScrollMode="never"
+                        app:layout_constraintTop_toBottomOf="@id/divider2"
+                        android:visibility="invisible"/>
+
+                    <include layout="@layout/no_data"
+                        android:id="@+id/no_data_cl" />
+
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/grey1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/commit_et"
+            android:layout_weight="1"
+            android:maxLines="3"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="9dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="30dp"
+            android:hint="@string/writeCommit"
+            android:textSize="14sp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:background="@drawable/shape_round_corner_grey_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send"
+            android:id="@+id/send_btn"
+            android:layout_marginRight="30dp"
+            android:textSize="14sp"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".module.chart.ChartActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/header_rl"
+        android:background="@color/toolbarBackground"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/type_tv"
+            android:text="@string/expense"
+            android:drawableRight="@drawable/ic_expansion_black"
+            android:gravity="center"
+            android:textColor="@color/black1"
+            android:layout_centerHorizontal="true"
+            android:textSize="17sp"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="fixed"
+        android:id="@+id/tab"
+        android:background="@color/toolbarBackground"
+        app:layout_constraintTop_toBottomOf="@id/header_rl">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/current_week"
+            android:id="@+id/week_tab"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/current_month"
+            android:id="@+id/month_tab"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/current_year"
+            android:id="@+id/year_tab"/>
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tab"
+        app:layout_constraintBottom_toTopOf="@id/divider">
+
+        <include layout="@layout/no_data"
+            android:id="@+id/no_data_cl"/>
+
+        <include layout="@layout/pie_chart"
+            android:id="@+id/pie_chart_cl"
+            android:visibility="gone"/>
+
+        <include layout="@layout/bar_chart"
+            android:id="@+id/bar_chart_ll"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bar_chart_tv"
+        android:text="@string/bar_chart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/chart_switch_select_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pie_chart"
+        android:id="@+id/pie_chart_tv"
+        app:layout_constraintRight_toLeftOf="@id/bar_chart_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/bar_chart_tv"
+        android:layout_marginRight="15dp"
+        android:textColor="@color/chart_switch_not_select_text"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:id="@+id/divider"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toTopOf="@id/pie_chart_tv"
+        android:layout_marginBottom="15dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

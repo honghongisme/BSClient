@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="20dp">
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:srcCompat="@drawable/ic_medical_grey"
+        android:id="@+id/image"
+        app:layout_constraintTop_toTopOf="@id/type_tv"
+        app:layout_constraintBottom_toBottomOf="@id/bar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="医疗"
+        android:id="@+id/type_tv"
+        app:layout_constraintLeft_toRightOf="@id/image"
+        app:layout_constraintBottom_toTopOf="@id/bar"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/black1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="71.0%"
+        android:id="@+id/proportion_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/type_tv"
+        app:layout_constraintLeft_toRightOf="@id/type_tv"
+        android:layout_marginLeft="10dp"
+        android:textSize="12sp"
+        android:textColor="@color/grey2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/amount_tv"
+        android:text="5223"
+        app:layout_constraintRight_toLeftOf="@id/arrow_iv"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_arrow"
+        android:id="@+id/arrow_iv"
+        app:layout_constraintTop_toTopOf="@id/type_tv"
+        app:layout_constraintBottom_toBottomOf="@id/bar"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:id="@+id/bar"
+        app:layout_constraintBottom_toBottomOf="@id/image"
+        app:layout_constraintLeft_toLeftOf="@id/type_tv"
+        app:layout_constraintRight_toRightOf="@id/amount_tv"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_circle_bar_bg" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

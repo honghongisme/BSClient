@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shape_round_corner"
+    android:paddingTop="20dp"
+    android:paddingBottom="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/budget_dialog_set"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/describe_title_tv"
+        android:textColor="@color/black"/>
+
+    <com.example.picturerecognize.widget.CustomEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/amount_et"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="15dp"
+        android:inputType="numberDecimal"
+        android:lines="1"
+        app:layout_constraintTop_toBottomOf="@id/describe_title_tv"
+        android:hint="@string/budget_dialog_edit_hint"
+        android:gravity="center_horizontal"
+        android:textSize="15sp"
+        android:textCursorDrawable="@color/chart_switch_select_text" />
+
+     <View
+         android:layout_width="match_parent"
+         android:layout_height="0.5dp"
+         android:background="@color/divider"
+         app:layout_constraintTop_toBottomOf="@id/amount_et"
+         android:layout_marginTop="20dp"
+         android:id="@+id/divider_hor"/>
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="20dp"
+        android:background="@color/divider"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_hor"
+        android:id="@+id/divider_ver"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/divider_ver"
+        app:layout_constraintTop_toBottomOf="@id/divider_hor"
+        android:layout_marginTop="20dp"
+        android:id="@+id/budget_set_cancel_tv"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/determine"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/divider_ver"
+        app:layout_constraintTop_toBottomOf="@id/divider_hor"
+        android:layout_marginTop="20dp"
+        android:id="@+id/budget_set_determine_tv"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

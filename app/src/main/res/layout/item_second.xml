@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp">
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:id="@+id/image"
+        android:background="@drawable/shape_unselect_bg_circular"
+        android:padding="8dp"
+        android:src="@drawable/ic_medical_grey"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/note_tv"
+        app:layout_constraintLeft_toRightOf="@id/image"
+        android:text="水果"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/current_month_balance_tv"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="30dp"
+        android:textColor="@color/black1"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/current_month_balance_tv"
+        app:layout_constraintLeft_toRightOf="@id/note_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintBaseline_toBaselineOf="@id/note_tv"
+        android:layout_marginRight="15dp"
+        android:text="+23.576"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_second"
+        app:layout_constraintTop_toBottomOf="@id/image"
+        android:layout_marginTop="7dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

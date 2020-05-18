@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/manual_input"
+        android:id="@+id/manual_input"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"/>
+
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/picture_recognize_gallery_train"
+        android:id="@+id/open_gallery_train"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/picture_recognize_gallery_vat"
+        android:id="@+id/open_gallery_vat"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"/>-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/picture_recognize_photograph_train"
+        android:id="@+id/open_camera_train"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/picture_recognize_photograph_vat"
+        android:id="@+id/open_camera_vat"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/divider"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/cancel"
+        android:id="@+id/budget_set_cancel_tv"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

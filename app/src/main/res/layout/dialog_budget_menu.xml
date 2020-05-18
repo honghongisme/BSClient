@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/budget_dialog_edit"
+        android:id="@+id/edit_tv"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/budget_dialog_delete"
+        android:id="@+id/delete_tv"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/divider"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/cancel"
+        android:id="@+id/budget_set_cancel_tv"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

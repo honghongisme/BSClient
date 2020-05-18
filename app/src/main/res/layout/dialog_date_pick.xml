@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendarView"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="@color/toolbarBackground"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/cancel_btn"
+        android:text="@string/cancel"
+        app:layout_constraintTop_toBottomOf="@id/calendarView"
+        app:layout_constraintRight_toLeftOf="@id/determine_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:gravity="center"
+        android:background="@drawable/border"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/determine_btn"
+        android:text="@string/determine"
+        app:layout_constraintBaseline_toBaselineOf="@id/cancel_btn"
+        app:layout_constraintLeft_toRightOf="@id/cancel_btn"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/border"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbarBackground"
+        android:id="@+id/toolbar"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:id="@+id/cancel_btn"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_budget"
+            android:id="@+id/title_tv"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add"
+            android:id="@+id/add_btn"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/budget"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/describe_budget_tv"/>
+
+    <com.example.picturerecognize.widget.CustomEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/describe_budget_tv"
+        android:layout_marginLeft="10dp"
+        android:inputType="numberDecimal"
+        android:lines="1"
+        android:hint="0.00"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp"
+        android:id="@+id/amount_et"/>
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/grid"
+        app:layout_constraintTop_toBottomOf="@id/amount_et"
+        android:layout_marginTop="25dp"
+        android:numColumns="4"
+        android:verticalSpacing="15dp"
+        android:horizontalSpacing="5dp"
+        android:listSelector="@android:color/transparent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

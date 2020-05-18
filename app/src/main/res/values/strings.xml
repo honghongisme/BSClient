@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">随心记</string>
+
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="income">收入</string>
+    <string name="expense">支出</string>
+    <string name="note">备注</string>
+    <string name="date">日期</string>
+    <string name="save_success">保存成功</string>
+
+    <string name="determine">确定</string>
+
+    <string name="record">记一笔</string>
+
+    <string name="income_describe">收入:</string>
+    <string name="expense_describe">支出:</string>
+
+    <string name="describe_no_data">暂无数据</string>
+    <string name="select_month">选择月份</string>
+    <string name="current_month_income">本月收入</string>
+    <string name="current_month_balance">本月结余</string>
+
+
+    <string name="clock">打卡</string>
+    <string name="continuousClockDayNum">已连续打卡</string>
+    <string name="totalChargeDayNum">记账总天数</string>
+    <string name="totalChargeNum">记账总笔数</string>
+
+    <string name="main">首页</string>
+    <string name="chart">图表</string>
+    <string name="social">社区</string>
+    <string name="my">我的</string>
+    <string name="settings">设置</string>
+    <string name="my_post">帖子</string>
+    <string name="bill">账单</string>
+    <string name="balance">结余</string>
+    <string name="month_budget">月总预算</string>
+    <string name="set_budget">设置预算</string>
+    <string name="remain_budget">剩余预算:</string>
+    <string name="current_month_budget">本月预算</string>
+    <string name="current_month_expense">本月支出</string>
+    <string name="change_head">更换头像</string>
+    <string name="logout">注销登录</string>
+
+    <string name="type">类型</string>
+    <string name="amount">金额</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
+
+    <string name="month">月份</string>
+
+    <string name="current_week">本周</string>
+    <string name="current_month">本月</string>
+    <string name="current_year">本年</string>
+    <string name="pie_chart">饼图</string>
+    <string name="bar_chart">条形图</string>
+    <string name="total_amount">总金额</string>
+
+    // login
+    <string name="account">账号</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="account_hint">请输入账号</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="register">注册</string>
+
+    // budget
+    <string name="budget">预算</string>
+    <string name="describe_no_classify_budget_data">未设置分类预算</string>
+    <string name="add_classify_budget">+ 添加分类预算</string>
+    <string name="budget_dialog_edit">编辑预算</string>
+    <string name="budget_dialog_delete">删除预算</string>
+    <string name="budget_dialog_set">设置预算</string>
+    <string name="budget_dialog_edit_hint">请输入预算金额</string>
+    <string name="add_budget">添加预算</string>
+    <string name="add">添加</string>
+
+    // add record menu
+    <string name="manual_input">手动输入</string>
+    <string name="picture_recognize_photograph_train">[图像识别-拍照]火车票</string>
+    <string name="picture_recognize_gallery_train">[图像识别-从相册选择]火车票</string>
+    <string name="picture_recognize_photograph_vat">[图像识别-拍照]增值税发票</string>
+    <string name="picture_recognize_gallery_vat">[图像识别-从相册选择]增值税发票</string>
+
+    <string name="latest">最新</string>
+    <string name="post">发帖</string>
+    <string name="publish">发表</string>
+    <string name="post_text_hint">请输入内容...</string>
+    <string name="total_commit">全部评论</string>
+    <string name="send">发送</string>
+    <string name="writeCommit">写评论...</string>
+    <string name="comment">评论</string>
+    <string name="charge_achievement">记账成就</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+</resources>

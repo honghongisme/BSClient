@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".module.social.user.UserActivity"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:src="@drawable/head1"
+                android:id="@+id/head_iv"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/account_tv"
+                android:text="喵喵喵"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintTop_toBottomOf="@id/head_iv"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/divider"
+                android:layout_marginTop="60dp"
+                app:layout_constraintTop_toBottomOf="@id/account_tv"
+                android:id="@+id/divider1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/charge_achievement"
+                app:layout_constraintTop_toBottomOf="@id/divider1"
+                android:id="@+id/describe_charge_achievement_tv"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/black1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="10dp"
+                android:textSize="13sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="@color/divider"
+                android:layout_marginTop="6dp"
+                app:layout_constraintTop_toBottomOf="@id/describe_charge_achievement_tv"
+                android:id="@+id/divider2"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/continuous_clock_day_num_tv"
+                android:text="-"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toBottomOf="@id/divider2"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/total_charge_day_num_tv"
+                android:textSize="16sp"
+                android:textColor="@color/black1"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/total_charge_day_num_tv"
+                android:text="-"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black1"
+                android:gravity="center_horizontal"
+                app:layout_constraintLeft_toRightOf="@id/continuous_clock_day_num_tv"
+                app:layout_constraintRight_toLeftOf="@id/total_charge_num_tv"
+                app:layout_constraintBaseline_toBaselineOf="@id/continuous_clock_day_num_tv" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/total_charge_num_tv"
+                android:text="-"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black1"
+                android:gravity="center_horizontal"
+                app:layout_constraintLeft_toRightOf="@id/total_charge_day_num_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBaseline_toBaselineOf="@id/continuous_clock_day_num_tv" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/describe_continuous_clock_day_num_tv"
+                android:text="@string/continuousClockDayNum"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toBottomOf="@id/continuous_clock_day_num_tv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/total_charge_day_num_tv"
+                app:layout_constraintBottom_toBottomOf="@id/divider3"
+                android:layout_marginBottom="13dp"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/describe_total_charge_day_num_tv"
+                android:text="@string/totalChargeDayNum"
+                android:gravity="center_horizontal"
+                android:textSize="13sp"
+                app:layout_constraintLeft_toRightOf="@id/describe_continuous_clock_day_num_tv"
+                app:layout_constraintRight_toLeftOf="@id/describe_total_charge_num_tv"
+                app:layout_constraintBaseline_toBaselineOf="@id/describe_continuous_clock_day_num_tv" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/describe_total_charge_num_tv"
+                android:textSize="13sp"
+                android:text="@string/totalChargeNum"
+                android:gravity="center_horizontal"
+                app:layout_constraintLeft_toRightOf="@id/describe_total_charge_day_num_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBaseline_toBaselineOf="@id/describe_continuous_clock_day_num_tv" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/divider"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@id/describe_continuous_clock_day_num_tv"
+                android:id="@+id/divider3"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tab_layout"
+                app:layout_constraintTop_toBottomOf="@id/divider3"
+                app:layout_constraintBottom_toTopOf="@id/view_pager"
+                app:tabIndicatorColor="@color/login_btn"
+                app:tabSelectedTextColor="@color/black1"
+                app:tabTextColor="@color/black1"
+                app:tabMode="scrollable"
+                app:tabGravity="fill"
+                style="@style/TabTitle"
+                app:tabIndicatorFullWidth="false"/>
+
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/tab_layout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/view_pager" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

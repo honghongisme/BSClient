@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbarBackground"
+        android:id="@+id/top_rl">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back"
+            android:src="@drawable/ic_back"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_unselect_bg_circular"
+            android:padding="5dp"
+            android:src="@drawable/ic_snacks_grey"
+            android:id="@+id/image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/classify_tv"
+            android:text="蔬菜"
+            android:layout_below="@id/image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/type"
+        android:id="@+id/describe_type_tv"
+        app:layout_constraintTop_toBottomOf="@id/top_rl"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/type_tv"
+        android:text="支出"
+        app:layout_constraintLeft_toRightOf="@id/describe_type_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/describe_type_tv"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        app:layout_constraintTop_toBottomOf="@id/describe_type_tv"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:id="@+id/divider1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/describe_amount_tv"
+        android:text="@string/amount"
+        app:layout_constraintLeft_toLeftOf="@id/describe_type_tv"
+        app:layout_constraintTop_toBottomOf="@id/divider1"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:id="@+id/amount_tv"
+        app:layout_constraintLeft_toLeftOf="@id/type_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/describe_amount_tv"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        app:layout_constraintTop_toBottomOf="@id/describe_amount_tv"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:id="@+id/divider2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/describe_date_tv"
+        android:text="@string/date"
+        app:layout_constraintLeft_toLeftOf="@id/describe_type_tv"
+        app:layout_constraintTop_toBottomOf="@id/divider2"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2020-04-05"
+        android:id="@+id/date_tv"
+        app:layout_constraintLeft_toLeftOf="@id/type_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/describe_date_tv"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        app:layout_constraintTop_toBottomOf="@id/describe_date_tv"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:id="@+id/divider3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/describe_note_tv"
+        android:text="@string/note"
+        app:layout_constraintLeft_toLeftOf="@id/describe_type_tv"
+        app:layout_constraintTop_toBottomOf="@id/divider3"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="小面包"
+        android:id="@+id/note_tv"
+        android:layout_marginRight="35dp"
+        app:layout_constraintLeft_toLeftOf="@id/type_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/describe_note_tv"
+        app:layout_constraintBottom_toTopOf="@id/divider4"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        app:layout_constraintTop_toBottomOf="@id/note_tv"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:id="@+id/divider4"/>
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="20dp"
+        android:id="@+id/divider5"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        android:id="@+id/edit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/divider5"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:id="@+id/delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/divider5"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:id="@+id/divider6"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toTopOf="@id/edit"
+        android:layout_marginBottom="15dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

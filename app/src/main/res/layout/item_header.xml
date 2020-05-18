@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="5dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/date"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="2012-03-21"
+        android:layout_marginLeft="15dp"
+        android:textSize="12sp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/expense_ll"
+        app:layout_constraintLeft_toRightOf="@id/date"
+        app:layout_constraintRight_toLeftOf="@id/income_ll">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/expense_text"
+            android:textSize="12sp"
+            android:text="@string/expense_describe"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/expense_tv"
+            android:textSize="12sp"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/income_ll"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toRightOf="@id/expense_ll"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/income_text"
+            android:textSize="12sp"
+            android:text="@string/income_describe"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/current_month_income_tv"
+            android:text="0"
+            android:textSize="12sp"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_header"
+        app:layout_constraintTop_toBottomOf="@id/date"
+        android:layout_marginTop="7dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/refreshLayout"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/list"/>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <include layout="@layout/no_data"
+        android:id="@+id/no_data_cl"/>
+
+
+</FrameLayout>

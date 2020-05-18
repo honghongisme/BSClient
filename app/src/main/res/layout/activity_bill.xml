@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".module.bill.BillActivity"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bill_bg"
+        android:paddingBottom="40dp"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/ic_back"
+            android:id="@+id/back_iv"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bill"
+            android:id="@+id/describe_bill_tv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_expansion_black"
+            android:id="@+id/year_tv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:gravity="center"
+            android:text="2019年"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/balance"
+            android:id="@+id/describe_balance_tv"
+            app:layout_constraintTop_toBottomOf="@id/describe_bill_tv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textColor="@color/grey3"
+            android:layout_marginTop="20dp"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/balance_tv"
+            app:layout_constraintTop_toBottomOf="@id/describe_balance_tv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="30sp"
+            android:layout_marginTop="5dp"
+            android:text="-3000.00"/>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="15dp"
+            android:background="@color/divider"
+            android:id="@+id/divider1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/balance_tv"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/describe_income_tv"
+            android:text="@string/income"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/balance_tv"
+            app:layout_constraintRight_toLeftOf="@id/income_tv"
+            android:textColor="@color/grey3"
+            android:textSize="12sp"
+            android:gravity="right"
+            android:paddingRight="10dp"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/income_tv"
+            android:text="0.00"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/describe_income_tv"
+            app:layout_constraintRight_toLeftOf="@id/divider1"
+            app:layout_constraintBaseline_toBaselineOf="@id/describe_income_tv"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/describe_expense_tv"
+            android:text="@string/expense"
+            app:layout_constraintLeft_toRightOf="@id/divider1"
+            app:layout_constraintBaseline_toBaselineOf="@id/describe_income_tv"
+            app:layout_constraintRight_toLeftOf="@id/expense_tv"
+            android:textColor="@color/grey3"
+            android:textSize="12sp"
+            android:gravity="right"
+            android:paddingRight="10dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/expense_tv"
+            android:text="3000.00"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/describe_expense_tv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/describe_income_tv"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/month"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/income"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/expense"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/balance"
+            android:textSize="12sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_arrow"
+            android:visibility="invisible"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list"/>
+
+</LinearLayout>

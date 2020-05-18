@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".module.login.LoginActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbarBackground"
+        android:id="@+id/toolbar">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:gravity="center"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account"
+        android:textColor="@color/black"
+        android:id="@+id/describe_account_tv"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/account_hint"
+        android:id="@+id/account_et"
+        app:layout_constraintLeft_toRightOf="@id/describe_account_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/describe_account_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="20dp"
+        android:textSize="15sp"
+        android:background="@null"
+        android:textCursorDrawable="@color/login_btn"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:id="@+id/divider1"
+        android:background="@color/divider"
+        app:layout_constraintLeft_toLeftOf="@id/describe_account_tv"
+        app:layout_constraintRight_toRightOf="@id/account_et"
+        app:layout_constraintTop_toBottomOf="@id/describe_account_tv"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textColor="@color/black"
+        android:id="@+id/describe_password_tv"
+        app:layout_constraintTop_toBottomOf="@id/divider1"
+        app:layout_constraintLeft_toLeftOf="@id/describe_account_tv"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/password_hint"
+        android:id="@+id/password_et"
+        android:textSize="15sp"
+        android:background="@null"
+        app:layout_constraintLeft_toLeftOf="@id/account_et"
+        app:layout_constraintRight_toRightOf="@id/account_et"
+        app:layout_constraintBaseline_toBaselineOf="@id/describe_password_tv"
+        android:textCursorDrawable="@color/login_btn"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:id="@+id/divider2"
+        android:background="@color/divider"
+        app:layout_constraintLeft_toLeftOf="@id/describe_account_tv"
+        app:layout_constraintRight_toRightOf="@id/account_et"
+        app:layout_constraintTop_toBottomOf="@id/describe_password_tv"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:id="@+id/register_btn"
+        app:layout_constraintTop_toBottomOf="@id/divider2"
+        app:layout_constraintLeft_toLeftOf="@id/describe_account_tv"
+        app:layout_constraintRight_toRightOf="@id/account_et"
+        android:background="@drawable/shape_circle_login_btn_bg"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:id="@+id/login_btn"
+        app:layout_constraintTop_toBottomOf="@id/register_btn"
+        app:layout_constraintRight_toRightOf="@id/register_btn"
+        android:layout_marginTop="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

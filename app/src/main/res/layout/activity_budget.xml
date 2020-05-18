@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".module.budget.BudgetActivity"
+    android:descendantFocusability="blocksDescendants">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbarBackground"
+        android:id="@+id/toolbar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back"
+            android:id="@+id/back_iv"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/budget"
+            android:layout_centerInParent="true"
+            android:textSize="17sp"
+            android:textColor="@color/black1"/>
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/divider2"
+        android:id="@+id/content_nsv">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@id/total_budget_sv">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="04月总预算"
+                    android:id="@+id/describe_title_tv"
+                    android:textColor="@color/black1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edit"
+                    app:layout_constraintBaseline_toBaselineOf="@id/describe_title_tv"
+                    app:layout_constraintRight_toRightOf="@id/remain_budget_tv"
+                    android:textSize="13sp"/>
+
+                <com.android.tu.circlelibrary.CirclePercentBar
+                    android:id="@+id/ring"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    app:arcWidth="10dp"
+                    app:circleRadius="40dp"
+                    app:centerTextSize="16sp"
+                    app:arcColor="@color/colorPrimary"
+                    app:centerTextColor="@color/colorAccent"
+                    app:arcStartColor="@android:color/holo_green_light"
+                    app:layout_constraintLeft_toLeftOf="@id/describe_title_tv"
+                    app:layout_constraintTop_toBottomOf="@id/describe_title_tv"/>
+
+                <TextView
+                    android:id="@+id/describe_remain_budget_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/remain_budget"
+                    app:layout_constraintLeft_toRightOf="@id/ring"
+                    app:layout_constraintTop_toBottomOf="@+id/describe_title_tv"
+                    app:layout_constraintRight_toLeftOf="@id/remain_budget_tv"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="13dp"
+                    android:textColor="@color/black1"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:id="@+id/remain_budget_tv"
+                    app:layout_constraintLeft_toRightOf="@id/describe_remain_budget_tv"
+                    app:layout_constraintBaseline_toBaselineOf="@id/describe_remain_budget_tv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divider"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/describe_remain_budget_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/describe_remain_budget_tv"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/divider_budget"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/describe_month_budget_tv"
+                    android:text="@string/current_month_budget"
+                    android:layout_marginTop="5dp"
+                    android:textSize="11sp"
+                    app:layout_constraintTop_toBottomOf="@id/divider_budget"
+                    app:layout_constraintLeft_toLeftOf="@id/describe_remain_budget_tv"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:id="@+id/month_budget_tv"
+                    app:layout_constraintLeft_toRightOf="@id/describe_month_budget_tv"
+                    app:layout_constraintBaseline_toBaselineOf="@id/describe_month_budget_tv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:gravity="right"
+                    android:layout_marginRight="20dp"/>
+
+                <TextView
+                    android:id="@+id/describe_month_expense_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_month_expense"
+                    app:layout_constraintLeft_toLeftOf="@id/describe_remain_budget_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/describe_month_budget_tv"
+                    android:layout_marginTop="8dp"
+                    android:textSize="11sp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:id="@+id/month_expense_tv"
+                    app:layout_constraintLeft_toRightOf="@id/describe_month_expense_tv"
+                    app:layout_constraintBaseline_toBaselineOf="@id/describe_month_expense_tv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:gravity="right"
+                    android:layout_marginRight="20dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/divider"
+                android:id="@+id/divider1"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/classify_budget_fl">
+
+                <include layout="@layout/no_classify_budget_data"
+                    android:id="@+id/no_data_cl"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/list"
+                    android:visibility="gone"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        android:id="@+id/divider2"
+        app:layout_constraintBottom_toTopOf="@id/add_classify_budget_tv"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintTop_toBottomOf="@id/content_nsv"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_classify_budget_tv"
+        android:text="@string/add_classify_budget"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/black"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

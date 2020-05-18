@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/toolbar"
+            app:title=""
+            android:background="@color/toolbarBackground">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:id="@+id/budget_set_cancel_tv"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <TextView
+                    android:id="@+id/expense_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/expense"
+                    android:textColor="@color/black1"
+                    app:layout_constraintLeft_toLeftOf="@id/budget_set_cancel_tv"
+                    app:layout_constraintRight_toLeftOf="@id/divider"
+                    android:layout_marginLeft="100dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" | "
+                    android:id="@+id/divider"
+                    app:layout_constraintLeft_toRightOf="@id/expense_tv"
+                    app:layout_constraintRight_toLeftOf="@id/current_month_income_tv"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/income"
+                    android:id="@+id/current_month_income_tv"
+                    android:textColor="@color/item_unselect_bg"
+                    app:layout_constraintLeft_toRightOf="@id/divider"
+                    app:layout_constraintRight_toRightOf="@id/save_tv"
+                    android:layout_marginRight="100dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save"
+                    android:id="@+id/save_tv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginRight="15dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amount"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/describe_amount_tv"
+            android:textSize="11sp"/>
+
+        <com.example.picturerecognize.widget.CustomEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/amount_et"
+            app:layout_constraintTop_toBottomOf="@id/describe_amount_tv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="25dp"
+            android:textSize="35sp"
+            android:inputType="numberDecimal"
+            android:lines="1"
+            android:hint="0.00"
+            android:textColor="@color/colorPrimary"
+            android:text="25"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/amount_et"
+            android:id="@+id/note_ll"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:drawableLeft="@drawable/ic_note"
+                app:srcCompat="@drawable/ic_note"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/note"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="10dp"
+                android:hint="..."
+                android:textSize="15sp"
+                android:background="@null"
+                android:textColor="@color/grey2"
+                android:id="@+id/note_et"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/note_ll"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:id="@+id/date_ll">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:drawableLeft="@drawable/ic_date"
+                app:srcCompat="@drawable/ic_date"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2020-04-08"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/date_tv" />
+
+
+        </LinearLayout>
+
+        <com.example.picturerecognize.widget.ScrollGridView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/grid"
+            app:layout_constraintTop_toBottomOf="@id/date_ll"
+            android:layout_marginTop="25dp"
+            android:numColumns="4"
+            android:verticalSpacing="15dp"
+            android:horizontalSpacing="5dp"
+            android:listSelector="@android:color/transparent"
+            android:paddingBottom="50dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2012 年 10 月"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:drawableRight="@drawable/ic_expansion_grey"
+                android:id="@+id/date_tv"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:text="记一笔"
+                android:id="@+id/add_btn"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_circle_login_btn_bg"
+                android:layout_marginRight="15dp"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/main_bg"
+                android:paddingBottom="25dp"
+                android:id="@+id/header_rl"
+                android:paddingTop="60dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:id="@+id/current_month_balance_tv"
+                    android:textSize="35sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white2"
+                    android:textSize="12sp"
+                    android:id="@+id/describe_current_balance_tv"
+                    android:text="@string/current_month_balance"
+                    app:layout_constraintTop_toBottomOf="@id/current_month_balance_tv"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/current_month_income_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/divider"
+                    app:layout_constraintTop_toBottomOf="@id/describe_current_balance_tv"
+                    android:text="13301.54"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white2"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/current_month_income"
+                    android:id="@+id/describe_current_month_income_tv"
+                    android:layout_below="@id/current_month_income_tv"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/white2"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/divider"
+                    app:layout_constraintTop_toBottomOf="@id/current_month_income_tv"/>
+
+
+                <View
+                    android:layout_width="0.3dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/divider"
+                    android:layout_marginTop="24dp"
+                    android:background="@color/divider"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/describe_current_balance_tv"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9327.00"
+                    android:id="@+id/expense_tv"
+                    android:layout_marginLeft="7dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBaseline_toBaselineOf="@id/current_month_income_tv"
+                    app:layout_constraintLeft_toRightOf="@id/divider"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textColor="@color/white2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/expense_describe"
+                    android:textSize="12sp"
+                    android:text="@string/current_month_expense"
+                    app:layout_constraintLeft_toRightOf="@id/divider"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBaseline_toBaselineOf="@id/describe_current_month_income_tv"
+                    android:textColor="@color/white2"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/list"
+                    android:visibility="gone"/>
+
+                <include layout="@layout/no_data"
+                    android:id="@+id/no_data_cl"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

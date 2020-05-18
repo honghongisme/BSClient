@@ -1,0 +1,117 @@
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/total_budget_sv"
+    android:paddingTop="15dp"
+    android:paddingLeft="15dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="04月总预算"
+        android:id="@+id/describe_title_tv"
+        android:textColor="@color/black1"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        app:layout_constraintBaseline_toBaselineOf="@id/describe_title_tv"
+        app:layout_constraintRight_toRightOf="@id/remain_budget_tv"
+        android:textSize="13sp"/>
+
+    <com.android.tu.circlelibrary.CirclePercentBar
+        android:id="@+id/ring"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        app:arcWidth="10dp"
+        app:circleRadius="40dp"
+        app:centerTextSize="16sp"
+        app:arcColor="@color/colorPrimary"
+        app:centerTextColor="@color/colorAccent"
+        app:arcStartColor="@android:color/holo_green_light"
+        app:layout_constraintTop_toBottomOf="@id/describe_title_tv"/>
+
+    <TextView
+        android:id="@+id/describe_remain_budget_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/remain_budget"
+        app:layout_constraintLeft_toRightOf="@id/ring"
+        app:layout_constraintTop_toBottomOf="@+id/describe_title_tv"
+        app:layout_constraintRight_toLeftOf="@id/remain_budget_tv"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="13dp"
+        android:textColor="@color/black1"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:id="@+id/remain_budget_tv"
+        app:layout_constraintLeft_toRightOf="@id/describe_remain_budget_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/describe_remain_budget_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="right"
+        android:layout_marginRight="20dp"
+        android:textSize="17sp"
+        android:textColor="@color/black"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/divider"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/describe_remain_budget_tv"
+        app:layout_constraintTop_toBottomOf="@+id/describe_remain_budget_tv"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/divider_budget"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/describe_month_budget_tv"
+        android:text="@string/current_month_budget"
+        android:layout_marginTop="5dp"
+        android:textSize="11sp"
+        app:layout_constraintTop_toBottomOf="@id/divider_budget"
+        app:layout_constraintLeft_toLeftOf="@id/describe_remain_budget_tv"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:id="@+id/month_budget_tv"
+        app:layout_constraintLeft_toRightOf="@id/describe_month_budget_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/describe_month_budget_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="right"
+        android:layout_marginRight="20dp"/>
+
+    <TextView
+        android:id="@+id/describe_month_expense_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/current_month_expense"
+        app:layout_constraintLeft_toLeftOf="@id/describe_remain_budget_tv"
+        app:layout_constraintTop_toBottomOf="@+id/describe_month_budget_tv"
+        android:layout_marginTop="8dp"
+        android:textSize="11sp"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:id="@+id/month_expense_tv"
+        app:layout_constraintLeft_toRightOf="@id/describe_month_expense_tv"
+        app:layout_constraintBaseline_toBaselineOf="@id/describe_month_expense_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="right"
+        android:layout_marginRight="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
