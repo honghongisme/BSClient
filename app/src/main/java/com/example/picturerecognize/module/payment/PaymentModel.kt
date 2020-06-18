@@ -20,7 +20,7 @@ class PaymentModel(context : Context) {
     // 浮点数相加会有误差 如0.3+0.1并不等于0.4 而是0.4000000003 这里对累加结果直接简单的取整
     // 如果在这里修改需要修改多处 所以选则在adapter视图显示里去修改
     fun searchRecords(userId: Int, date : String, listener : PaymentPresenter.PaymentDataListener) {
-        // 假如查用户1的2020 04月的数据 怎么查到 3月底就不查了？ 或者查完也可 忽略效率问题
+
         val sql = "select ${SQLiteHelper.FIELD_RECORD_ID}, ${SQLiteHelper.FIELD_TYPE}, ${SQLiteHelper.FIELD_CLASSIFY}, ${SQLiteHelper.FIELD_AMOUNT}, ${SQLiteHelper.FIELD_DATE}, ${SQLiteHelper.FIELD_NOTE} from ${SQLiteHelper.TABLE_RECORD} where ${SQLiteHelper.FIELD_USER_ID} = $userId and ${SQLiteHelper.FIELD_DATE} like '$date%' order by ${SQLiteHelper.FIELD_DATE} desc"
         val cursor = mDatabase?.rawQuery(sql, null)
 
@@ -47,7 +47,7 @@ class PaymentModel(context : Context) {
             val note = cursor.getString(cursor.getColumnIndex(SQLiteHelper.FIELD_NOTE))
 
             if (currentTotalDay != date) {
-                // 更改新header的位置 后面统计完好修改 初始数据就先设置为0
+                // 更改新header的位置 初始数据就先设置为0
                 currentTotalHeaderIndex = data.size
                 var header = HeaderItem(date, 0f, 0f)
                 data.add(header)

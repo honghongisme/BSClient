@@ -10,13 +10,12 @@ object RetrofitHelper {
 
     public var mInstance : Retrofit? = null
 
-    private const val BASE_URL = "http://192.168.1.109:8080"
-    const val LOGIN_URL = "/LoginServlet"
-    const val RECORD_URL = "/RecordServlet"
-    const val BUDGET_URL = "/BudgetServlet"
-    const val POST_URL = "/PostServlet"
-    const val CLOCK_URL = "/ClockServlet"
-    const val IMAGE_UPLOAD_URL = "/ImageUploadServlet"
+    private const val BASE_URL = "http://192.168.43.247:8080/server_war_exploded/"
+    const val LOGIN_URL = "LoginServlet"
+    const val RECORD_URL = "RecordServlet"
+    const val BUDGET_URL = "BudgetServlet"
+    const val POST_URL = "PostServlet"
+    const val CLOCK_URL = "ClockServlet"
 
     init {
         mInstance = Retrofit.Builder()
